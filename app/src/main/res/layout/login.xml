@@ -52,27 +52,31 @@
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/OnBoardingInput"
+            android:id="@+id/emailInputLayout"
             android:layout_marginBottom="15dp"
-            android:hint="@string/hint_email"
             app:endIconDrawable="@drawable/mail"
             app:endIconMode="custom">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:hint="@string/hint_email"
                 android:textSize="14sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/OnBoardingInput"
-            android:hint="@string/hint_password"
+            android:id="@+id/passwordInputLayout"
             app:endIconDrawable="@drawable/lock"
             app:endIconMode="custom">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:hint="@string/hint_password"
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
