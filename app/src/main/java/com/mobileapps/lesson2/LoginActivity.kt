@@ -1,7 +1,9 @@
 package com.mobileapps.lesson2
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +23,13 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.login)
 
         nextButton.setOnClickListener { validateAndLogin() }
+
+        var register = findViewById<TextView>(R.id.register);
+        register.setOnClickListener{
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun validateAndLogin() {
@@ -44,4 +53,5 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
+
 }
