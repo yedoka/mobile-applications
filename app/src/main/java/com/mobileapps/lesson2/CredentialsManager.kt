@@ -12,4 +12,15 @@ class CredentialsManager {
     fun isValidPassword(password: String): Boolean {
         return password.isNotEmpty()
     }
+    val credentials = mutableMapOf(
+        Pair("test@te.st", "1234")
+    )
+    fun checkIfEmailExists(email:String):Boolean{
+        return credentials.contains(email.lowercase())
+    }
+    fun register(fullName:String, email: String,phoneNumber:String,password: String){
+        if (isEmailValid(email) && isValidPassword(password)){
+            credentials[email.lowercase()] = password
+        }
+    }
 }

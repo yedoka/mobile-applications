@@ -53,6 +53,7 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameInput"
             style="@style/OnBoardingInput"
             android:layout_marginBottom="15dp"
             android:hint="@string/hint_full_name"
@@ -67,6 +68,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailInput"
             style="@style/OnBoardingInput"
             android:layout_marginBottom="15dp"
             android:hint="@string/hint_email"
@@ -81,6 +83,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/numberInput"
             style="@style/OnBoardingInput"
             android:layout_marginBottom="15dp"
             android:hint="@string/hint_phone_number"
@@ -95,6 +98,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordInput"
             style="@style/OnBoardingInput"
             android:layout_marginBottom="15dp"
             android:hint="@string/hint_password"
