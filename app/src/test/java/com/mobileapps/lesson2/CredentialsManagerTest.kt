@@ -46,4 +46,28 @@ class CredentialsManagerTest {
         val result = credentialsManager.isValidPassword("password123")
         assertTrue("Expected true for filled password", result)
     }
+
+    @Test
+    fun givenCorrectCredentialsFormatWhenRegister(){
+        credentialsManager.register("Full name", "test@example.com","9483893843","1234")
+        val isRegisterSuccessful = credentialsManager.credentials.contains("test@example.com") && credentialsManager.credentials["test@example.com"] == "1234"
+        assertEquals(true,isRegisterSuccessful)
+    }
+
+    @Test
+    fun givenUpperCaseCredentialsFormatWhenRegister(){
+        credentialsManager.register("Full name", "Test2@example.com","9483893843","1234")
+        val isRegisterSuccessful = credentialsManager.credentials.contains("test2@example.com") && credentialsManager.credentials["test2@example.com"] == "1234"
+        assertEquals(true,isRegisterSuccessful)
+    }
+    @Test
+    fun givenEmailAllreadyExist(){
+        val email = "test@te.st"
+        assertEquals(true,credentialsManager.checkIfEmailExists(email))
+    }
+    @Test
+    fun givenEmailDoesNotExist(){
+        val email = "Test3@example.com"
+        assertEquals(false,credentialsManager.checkIfEmailExists(email))
+    }
 }
