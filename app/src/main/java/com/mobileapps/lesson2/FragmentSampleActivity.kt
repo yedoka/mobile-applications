@@ -19,13 +19,14 @@ class FragmentSampleActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        findViewById<View>(R.id.changeButton).setOnClickListener{
+        findViewById<View>(R.id.changeButton).setOnClickListener {
             supportFragmentManager.commit {
-                val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container_view)
-                if(currentFragment is FragmentA){
-                    replace<FragmentB>(R.id.fragment_container_view)
+                val currentFragment =
+                    supportFragmentManager.findFragmentById(R.id.fragmentContainerView)
+                if (currentFragment is FragmentA) {
+                    replace<FragmentB>(R.id.fragmentContainerView)
                     addToBackStack(null)
-                }else{
+                } else {
                     supportFragmentManager.popBackStack()
                 }
             }
