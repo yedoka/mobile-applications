@@ -18,9 +18,14 @@ class CredentialsManager {
     fun checkIfEmailExists(email:String):Boolean{
         return credentials.contains(email.lowercase())
     }
-    fun register(fullName:String, email: String,phoneNumber:String,password: String){
+    fun register(fullName:String, email: String,phoneNumber:String,password: String): Boolean{
         if (isEmailValid(email) && isValidPassword(password)){
             credentials[email.lowercase()] = password
+            return true
         }
+        return false
+    }
+    fun login(email:String,password: String) : Boolean{
+        return checkIfEmailExists(email) && credentials[email.lowercase()] == password
     }
 }
